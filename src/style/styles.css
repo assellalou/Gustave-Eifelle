@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #ededed;
+  background-blend-mode: screen;
+  color: #333;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+a:hover {
+  color: #222;
+}
