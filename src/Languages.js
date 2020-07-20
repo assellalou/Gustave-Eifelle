@@ -9,6 +9,14 @@ export default {
       'Mon Profile',
       'Se Deconnecter',
     ],
+    Profile: {
+      title: 'Profile',
+      buttons: {
+        load: 'charger',
+        delete: 'supprimer',
+        save: 'enregistrer',
+      },
+    },
   },
   USA: {
     SideMenu: [
@@ -28,6 +36,11 @@ export default {
     },
     Profile: {
       title: 'Profile',
+      buttons: {
+        load: 'load',
+        delete: 'delete',
+        save: 'save',
+      },
     },
   },
   MAR: {
@@ -40,5 +53,19 @@ export default {
       'الملف الشخصي',
       'تسجيل خروج',
     ],
+    Courses: {
+      title: 'دورة',
+    },
+    Calendar: {
+      title: 'التقويم',
+    },
+    Profile: {
+      title: 'الملف الشخصي',
+      buttons: {
+        load: 'شحن',
+        delete: 'حذف',
+        save: 'حفظ',
+      },
+    },
   },
 };

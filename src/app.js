@@ -7,6 +7,7 @@ import TopNav from './components/shared/TopNav.jsx';
 import styled from 'styled-components';
 import Courses from './components/Courses.jsx';
 import Calendar from './components/Calendars.jsx';
+import Profile from './components/Profile.jsx';
 import content from './Languages';
 import LanguageContext from './components/LanguageContext.jsx';
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
             <Courses path="/" />
             <Courses path="/courses" />
             <Calendar path="/calendar" />
+            <Profile path="/profile" />
           </Router>
         </Container>
       </div>

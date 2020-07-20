@@ -5,25 +5,25 @@ import styled from 'styled-components';
 const Courses = () => {
   const courses = [
     {
-      name: 'American wars',
+      name: 'Americas wars',
       uri: 'https://example.com',
       chapter: 'War of Afghanistan',
       type: 'History',
-      teacher: 'Mr Homer',
+      teacher: 'Prof Homer',
     },
     {
       name: 'Data visualization',
       uri: 'https://example.com',
       chapter: 'Python Tuples',
       type: 'Software engineering',
-      teacher: 'Dr Linus',
+      teacher: 'Mr Linus',
     },
     {
-      name: 'Php fundamentals ',
+      name: 'DNA Sequence',
       uri: 'https://example.com',
-      chapter: 'Request Methods',
+      chapter: 'Decoding dragon DNA',
       type: 'Evolutionary biology',
-      teacher: 'Dawkins ',
+      teacher: 'Dr Dawkins ',
     },
   ];
 
