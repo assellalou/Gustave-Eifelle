@@ -1,6 +1,7 @@
 import React from 'react';
 import CourseCard from './shared/CourseCard.jsx';
 import styled from 'styled-components';
+import NothingToShow from './shared/NothingToShow.jsx';
 
 const Courses = () => {
   const courses = [
@@ -29,11 +30,13 @@ const Courses = () => {
 
   return (
     <Container>
-      <Title>Courses</Title>
+      <Title>Courses / {courses.length}</Title>
       <Coursesontainer>
-        {courses.map((item) => (
-          <CourseCard course={item} key={item.name} />
-        ))}
+        {courses ? (
+          courses.map((item) => <CourseCard course={item} key={item.name} />)
+        ) : (
+          <NothingToShow name={'couses'} />
+        )}
       </Coursesontainer>
     </Container>
   );

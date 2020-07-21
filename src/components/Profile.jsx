@@ -10,12 +10,12 @@ const Profile = () => {
   return (
     <Tabs
       style={{
-        maxWidth: '1100px',
+        maxWidth: '900px',
         margin: 'auto',
         border: 'none',
         height: '100%',
         marginTop: '20px',
-        padding: '20px',
+        padding: '20px 0',
       }}
     >
       <TabList>
@@ -23,7 +23,6 @@ const Profile = () => {
         <Tab>General</Tab>
         <Tab>Security</Tab>
       </TabList>
-
       <TabPanel>
         <ProfileCard>
           <ProfileImageContainer>
@@ -59,30 +58,47 @@ const Profile = () => {
               <option>Meknes</option>
             </SelectEntry>
           </InputContainer>
-          <ProfileLink href="#">Save</ProfileLink>
+          <ProfileButtonsContainer>
+            <ProfileLink href="#">Save</ProfileLink>
+          </ProfileButtonsContainer>
         </InputCard>
       </TabPanel>
-      <TabPanel>lol</TabPanel>
+      <TabPanel>
+        <InputCard>
+          <h3>Security Settings</h3>
+          <InputContainer>
+            <TextEntery
+              type="password"
+              placeholder="current password"
+              data-type
+            />
+            <TextEntery type="password" placeholder="new password" />
+            <TextEntery type="password" placeholder="new password" />
+          </InputContainer>
+          <ProfileButtonsContainer>
+            <ProfileLink href="#">Change my password</ProfileLink>
+          </ProfileButtonsContainer>
+        </InputCard>
+      </TabPanel>
     </Tabs>
   );
 };
 const SelectEntry = styled.select`
-  font-size: 18px;
+  font-size: 16px;
   color: #aaa;
-  width: 82%;
+  width: 90%;
+  max-width: 265px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  margin: 10px;
+  margin: 10px 20px;
   background: linear-gradient(145deg, #d5d5d5, #fefefe);
   box-shadow: 5px 5px 9px #dfdfdf, -5px -5px 9px #fbfbfb;
 `;
 
 const TextEntery = styled.input`
-  width: 40%;
-  min-width: 200px;
   color: #333;
-  font-size: 18px;
+  font-size: 16px;
   padding: 10px 20px;
   background: #eee;
   border: none;
@@ -99,7 +115,13 @@ const InputContainer = styled.form`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 50px 0;
+  margin: 50px 0 10px 0;
+  padding: 0 20px;
+  @media (max-width: 900px) {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    overflow: hidden;
+  }
 `;
 const InputCard = styled.div`
   width: 80%;
@@ -108,11 +130,15 @@ const InputCard = styled.div`
   border-radius: 12px;
   box-shadow: 5px 5px 10px #dfdfdf, -5px -5px 10px #fbfbfb;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
   position: relative;
   padding: 50px 0;
+  @media (max-width: 900px) {
+    width: 90%;
+    padding: 25px 0;
+  }
 `;
 const ProfileCard = styled.div`
   width: 100%;
@@ -204,8 +230,9 @@ const ProfileLink = styled.a`
   letter-spacing: 1px;
   transition: all 0.5s;
   @media (max-width: 900px) {
-    width: 100%;
+    width: 90%;
     margin-bottom: 10px;
+    text-align: center;
   }
 `;
 
