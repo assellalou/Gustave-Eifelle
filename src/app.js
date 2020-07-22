@@ -11,6 +11,7 @@ import Profile from './components/Profile.jsx';
 import content from './Languages';
 import LanguageContext from './components/LanguageContext.jsx';
 import Classes from './components/Classes.jsx';
+import Archives from './components/Archives.jsx';
 const App = () => {
   const languageHook = useState(content.FRA);
   return (
@@ -31,6 +32,7 @@ const App = () => {
             <Calendar path="/calendar" />
             <Profile path="/profile" />
             <Classes path="/classes" />
+            <Archives path="/archives" />
           </Router>
         </Container>
       </div>

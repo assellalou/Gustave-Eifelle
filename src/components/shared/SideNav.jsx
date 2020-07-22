@@ -53,7 +53,7 @@ const SideNav = (props) => {
             <NavLink>{lang.SideMenu[3]}</NavLink>
           </SideNavItem>
         </Link>
-        <Link to="/calendrier">
+        <Link to="/archives">
           <SideNavItem>
             <FontAwesomeIcon icon={faArchive} />
             <NavLink>{lang.SideMenu[4]}</NavLink>
@@ -65,7 +65,7 @@ const SideNav = (props) => {
             <NavLink>{lang.SideMenu[5]}</NavLink>
           </SideNavItem>
         </Link>
-        <Link to="/calendrier">
+        <Link to="/logout">
           <SideNavItem>
             <FontAwesomeIcon icon={faSignOutAlt} />
             <NavLink>{lang.SideMenu[6]}</NavLink>
