@@ -18,7 +18,7 @@ let events = [
 const Calendars = () => {
   return (
     <Container>
-      <Title>Calendar</Title>
+      <Title>Calendar / {events.length}</Title>
       <Calendar
         events={events}
         startAccessor="start"
@@ -31,7 +31,7 @@ const Calendars = () => {
 };
 
 const Container = styled.div`
-  width: 90%;
+  width: 95%;
   margin: auto;
   height: 90%;
 `;

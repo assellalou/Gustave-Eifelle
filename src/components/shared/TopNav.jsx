@@ -37,7 +37,7 @@ const TopNav = () => {
   return (
     <Nav>
       <Brand>
-        <img src={watermark} alt="logo" style={{ maxWidth: 300 }} />
+        <img src={watermark} alt="logo" style={{ width: '100%' }} />
       </Brand>
       <TopNavRightSide>
         <li>
@@ -72,6 +72,10 @@ const Brand = styled.div`
   font-size: 2em;
   font-weight: bold;
   display: inline-block;
+  max-width: 200px;
+  min-width: 100px;
+  align-self: center;
+  padding: 6px 0 0 0;
 `;
 const NoStyleButton = styled.button`
   all: unset;

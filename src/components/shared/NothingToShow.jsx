@@ -32,6 +32,7 @@ const Container = styled.div`
   flex-direction: column;
   color: #aaa;
   opacity: 0.7;
+  text-align: center;
 `;
 
 export default NothingToShow;

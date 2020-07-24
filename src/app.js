@@ -12,11 +12,12 @@ import content from './Languages';
 import LanguageContext from './components/LanguageContext.jsx';
 import Classes from './components/Classes.jsx';
 import Archives from './components/Archives.jsx';
+import Login from './components/Login.jsx';
 const App = () => {
   const languageHook = useState(content.FRA);
   return (
     <LanguageContext.Provider value={languageHook}>
-      <div style={{ width: '100%' }}>
+      <div style={{ width: '100%', overflow: 'hidden' }}>
         <TopNav />
         <Container>
           <SideNav
@@ -28,6 +29,7 @@ const App = () => {
           />
           <Router style={{ width: '100%' }}>
             <Courses path="/" />
+            <Login path="/login" />
             <Courses path="/courses" />
             <Calendar path="/calendar" />
             <Profile path="/profile" />

@@ -87,15 +87,15 @@ const SideNavContainer = styled.div`
   align-items: stretch;
   overflow: hidden;
   @media (max-width: 900px) {
-    min-width: 70px;
-    max-width: 70px;
+    min-width: 60px;
+    max-width: 60px;
   }
 `;
 const SideNavItems = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
+  padding: 0 15px;
   @media (max-width: 900px) {
     padding: 10px;
   }
@@ -107,8 +107,12 @@ const SideNavItem = styled.li`
   transition: background 0.5s;
   border-radius: 3px;
   transition: background 1s;
+
   &:hover {
     background: #edd;
+  }
+  @media (max-width: 900px) {
+    text-align: center;
   }
 `;
 const NavLink = styled.h4`

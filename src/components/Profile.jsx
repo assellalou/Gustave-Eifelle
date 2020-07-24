@@ -8,22 +8,13 @@ const Profile = () => {
   const [lang] = useContext(LanguageContext);
   //   console.log(lang.Profile.buttons.change);
   return (
-    <Tabs
-      style={{
-        maxWidth: '900px',
-        margin: 'auto',
-        border: 'none',
-        height: '100%',
-        marginTop: '20px',
-        padding: '20px 0',
-      }}
-    >
+    <StyledTabs>
       <TabList>
         <Tab>Preview</Tab>
         <Tab>General</Tab>
         <Tab>Security</Tab>
       </TabList>
-      <TabPanel>
+      <TabPanel style={{ width: '100%' }}>
         <ProfileCard>
           <ProfileImageContainer>
             <ProfileImage src={profilePic} alt="Profile" />
@@ -80,9 +71,16 @@ const Profile = () => {
           </ProfileButtonsContainer>
         </InputCard>
       </TabPanel>
-    </Tabs>
+    </StyledTabs>
   );
 };
+const StyledTabs = styled(Tabs)`
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  height: 100%;
+  padding: 20px 0;
+`;
 const SelectEntry = styled.select`
   font-size: 16px;
   color: #aaa;

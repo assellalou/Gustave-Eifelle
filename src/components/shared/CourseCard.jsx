@@ -23,12 +23,12 @@ const Course = styled.div`
   display: flex;
   width: 500px;
   max-width: 100%;
-  min-width: 400px;
+  min-width: 200px;
   margin: 20px 10px;
   overflow: hidden;
   @media (max-width: 900px) {
     flex-direction: column;
-    min-width: 300px;
+    min-width: 250px;
     width: auto;
   }
 `;
@@ -42,6 +42,7 @@ const CourseH6 = styled.h6`
 const CourseH2 = styled.h2`
   letter-spacing: 1px;
   margin: 10px 0;
+  max-width: 200px;
 `;
 const CourseTeacher = styled.h3`
   color: #fff;
@@ -66,12 +67,11 @@ const CourseInfo = styled.div`
 const CourseLink = styled.a`
   background: #ededed;
   box-shadow: 6px 6px 30px #cecece, -6px -6px 30px #ffffff;
-  border: 1px solid #eee;
   border-radius: 50px;
   text-decoration: none;
   color: #333;
   font-size: 16px;
-  padding: 12px 25px;
+  padding: 12px 20px;
   position: absolute;
   bottom: 30px;
   right: 30px;
@@ -82,11 +82,12 @@ const CourseLink = styled.a`
     color: #eee;
   }
   @media (max-width: 900px) {
-    bottom: 140px;
+    bottom: 150px;
     background: #ce3d3d;
     box-shadow: 6px 6px 30px #ca2231, -6px -6px 10px #cf4d4d;
     border-color: #ce3d3d;
     color: #eee;
+    font-size: 14px;
   }
 `;
 export default CourseCard;

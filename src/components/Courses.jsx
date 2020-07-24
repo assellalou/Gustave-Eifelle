@@ -12,20 +12,6 @@ const Courses = () => {
       type: 'History',
       teacher: 'Prof Homer',
     },
-    {
-      name: 'Data visualization',
-      uri: 'https://example.com',
-      chapter: 'Python Tuples',
-      type: 'Software engineering',
-      teacher: 'Mr Linus',
-    },
-    {
-      name: 'DNA Sequence',
-      uri: 'https://example.com',
-      chapter: 'Decoding dragon DNA',
-      type: 'Evolutionary biology',
-      teacher: 'Dr Dawkins ',
-    },
   ];
 
   return (
