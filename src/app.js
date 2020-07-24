@@ -15,29 +15,38 @@ import Archives from './components/Archives.jsx';
 import Login from './components/Login.jsx';
 const App = () => {
   const languageHook = useState(content.FRA);
+  const [isActive, setIsActive] = useState(false);
+
+  const handleConnect = () => {
+    setIsActive(true);
+  };
   return (
     <LanguageContext.Provider value={languageHook}>
-      <div style={{ width: '100%', overflow: 'hidden' }}>
-        <TopNav />
-        <Container>
-          <SideNav
-            profile={{
-              img: profilepic,
-              name: 'Clark Greiffen',
-              email: 'clark@contact.com',
-            }}
-          />
-          <Router style={{ width: '100%' }}>
-            <Courses path="/" />
-            <Login path="/login" />
-            <Courses path="/courses" />
-            <Calendar path="/calendar" />
-            <Profile path="/profile" />
-            <Classes path="/classes" />
-            <Archives path="/archives" />
-          </Router>
-        </Container>
-      </div>
+      {isActive ? (
+        <div style={{ width: '100%', overflow: 'hidden' }}>
+          <TopNav />
+          <Container>
+            <SideNav
+              profile={{
+                img: profilepic,
+                name: 'Clark Greiffen',
+                email: 'clark@contact.com',
+              }}
+            />
+            <Router style={{ width: '100%' }}>
+              <Courses path="/" />
+              <Login path="/login" />
+              <Courses path="/courses" />
+              <Calendar path="/calendar" />
+              <Profile path="/profile" />
+              <Classes path="/classes" />
+              <Archives path="/archives" />
+            </Router>
+          </Container>
+        </div>
+      ) : (
+        <Login connect={handleConnect} />
+      )}
     </LanguageContext.Provider>
   );
 };

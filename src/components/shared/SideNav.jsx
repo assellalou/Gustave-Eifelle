@@ -65,12 +65,15 @@ const SideNav = (props) => {
             <NavLink>{lang.SideMenu[5]}</NavLink>
           </SideNavItem>
         </Link>
-        <Link to="/logout">
+        <button
+          style={{ all: 'unset', cursor: 'pointer' }}
+          onClick={() => window.location.reload(false)}
+        >
           <SideNavItem>
             <FontAwesomeIcon icon={faSignOutAlt} />
             <NavLink>{lang.SideMenu[6]}</NavLink>
           </SideNavItem>
-        </Link>
+        </button>
       </SideNavItems>
     </SideNavContainer>
   );
