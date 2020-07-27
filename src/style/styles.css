@@ -20,3 +20,6 @@ a {
 a:hover {
   color: #222;
 }
+#root {
+  height: 100%;
+}
