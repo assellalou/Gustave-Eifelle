@@ -1,18 +1,22 @@
 import React, { useContext } from 'react';
 import LanguageContext from './LanguageContext.jsx';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
-import profilePic from './../resources/carry.jpeg';
+import profilePic from './../resources/default.png';
 import styled from 'styled-components';
 const Profile = () => {
   const [lang] = useContext(LanguageContext);
-  //   console.log(lang.Profile.buttons.change);
+  const profileData = {
+    name: 'Mohammed Massoudi',
+    email: 'mohammed@gustave.com',
+    school: 'Gustave Eifelle',
+    address: '926 Marjane 2 Meknes',
+  };
   return (
     <StyledTabs>
       <TabList>
-        <Tab>Preview</Tab>
-        <Tab>General</Tab>
-        <Tab>Security</Tab>
+        <Tab>{lang.Profile.nav.preview}</Tab>
+        <Tab>{lang.Profile.nav.general}</Tab>
+        <Tab>{lang.Profile.nav.security}</Tab>
       </TabList>
       <TabPanel style={{ width: '100%' }}>
         <ProfileCard>
@@ -20,11 +24,9 @@ const Profile = () => {
             <ProfileImage src={profilePic} alt="Profile" />
           </ProfileImageContainer>
           <ProfileCardContainer>
-            <ProfileName>Carrie Mathison</ProfileName>
-            <ProfileEmail>mathison@contact.gov</ProfileEmail>
-            <ProfileAdresse>
-              2608 84th Street Ct S Lakewood, Washington(WA), 98499
-            </ProfileAdresse>
+            <ProfileName>{profileData.name}</ProfileName>
+            <ProfileEmail>{profileData.email}</ProfileEmail>
+            <ProfileAdresse>{profileData.address}</ProfileAdresse>
             <ProfileButtonsContainer>
               <ProfileLink href="#">{lang.Profile.buttons.load}</ProfileLink>
               <ProfileLink
@@ -39,35 +41,59 @@ const Profile = () => {
       </TabPanel>
       <TabPanel>
         <InputCard>
-          <h3>Profile Settings</h3>
+          <h3 style={{ textAlign: 'center' }}>
+            {lang.Profile.generalSettings.title}
+          </h3>
           <InputContainer>
-            <TextEntery type="text" placeholder="Name" data-type />
-            <TextEntery type="email" placeholder="Email" />
-            <TextEntery type="text" placeholder="Adresse" />
-            <TextEntery type="tel" placeholder="Phone" />
+            <TextEntery
+              type="text"
+              placeholder={lang.Profile.generalSettings.nameInput}
+            />
+            <TextEntery
+              type="email"
+              placeholder={lang.Profile.generalSettings.emailInput}
+            />
+            <TextEntery
+              type="text"
+              placeholder={lang.Profile.generalSettings.addressInput}
+            />
+            <TextEntery
+              type="tel"
+              placeholder={lang.Profile.generalSettings.phoneInput}
+            />
             <SelectEntry>
               <option>Meknes</option>
+              <option>Rabat</option>
+              <option>Casablanca</option>
+              <option>Settat</option>
             </SelectEntry>
           </InputContainer>
           <ProfileButtonsContainer>
-            <ProfileLink href="#">Save</ProfileLink>
+            <ProfileLink href="#">{lang.Profile.buttons.save}</ProfileLink>
           </ProfileButtonsContainer>
         </InputCard>
       </TabPanel>
       <TabPanel>
         <InputCard>
-          <h3>Security Settings</h3>
+          <h3 style={{ textAlign: 'center' }}>
+            {lang.Profile.securitySettings.title}
+          </h3>
           <InputContainer>
             <TextEntery
               type="password"
-              placeholder="current password"
-              data-type
+              placeholder={lang.Profile.securitySettings.currentpwd}
             />
-            <TextEntery type="password" placeholder="new password" />
-            <TextEntery type="password" placeholder="new password" />
+            <TextEntery
+              type="password"
+              placeholder={lang.Profile.securitySettings.newpwd}
+            />
+            <TextEntery
+              type="password"
+              placeholder={lang.Profile.securitySettings.repeatnewpwd}
+            />
           </InputContainer>
           <ProfileButtonsContainer>
-            <ProfileLink href="#">Change my password</ProfileLink>
+            <ProfileLink href="#">{lang.Profile.buttons.save}</ProfileLink>
           </ProfileButtonsContainer>
         </InputCard>
       </TabPanel>
@@ -136,6 +162,7 @@ const InputCard = styled.div`
   @media (max-width: 900px) {
     width: 90%;
     padding: 25px 0;
+    margin-top: 60px;
   }
 `;
 const ProfileCard = styled.div`
@@ -148,6 +175,9 @@ const ProfileCard = styled.div`
   max-width: 500px;
   position: relative;
   background: #ededed;
+  @media (max-width: 900px) {
+    margin-top: 80px;
+  }
 `;
 const ProfileImageContainer = styled.div`
   width: 150px;
@@ -231,6 +261,7 @@ const ProfileLink = styled.a`
     width: 90%;
     margin-bottom: 10px;
     text-align: center;
+    max-width: 150px;
   }
 `;
 

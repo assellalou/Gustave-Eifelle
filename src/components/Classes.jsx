@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import NothingToShow from './shared/NothingToShow.jsx';
 import styled from 'styled-components';
-
+import LanguageContext from './LanguageContext.jsx';
 const Classes = () => {
   const classesArr = [];
+  const [lang] = useContext(LanguageContext);
   return (
     <Container>
-      <Title>Classes / {classesArr.length}</Title>
+      <Title>
+        {lang.Classes.title} / {classesArr.length}
+      </Title>
       <ClassesContainer>
         {classesArr.length ? (
           <h1>classcard</h1> //change it
         ) : (
-          <NothingToShow name="classes" />
+          <NothingToShow name={lang.Classes.title} />
         )}
       </ClassesContainer>
     </Container>

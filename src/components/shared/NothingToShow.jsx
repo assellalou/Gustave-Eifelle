@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
+import LanguageContext from './../LanguageContext.jsx';
 
 const NothingToShow = ({ name }) => {
+  const [lang] = useContext(LanguageContext);
   return (
     <Container>
       <FontAwesomeIcon
@@ -15,7 +17,9 @@ const NothingToShow = ({ name }) => {
           margin: '20px',
         }}
       />
-      <h1>no {name} to show</h1>
+      <h1>
+        {lang.NothingToShow.firstpart} {name} {lang.NothingToShow.lastpart}
+      </h1>
     </Container>
   );
 };

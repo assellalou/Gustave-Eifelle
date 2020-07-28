@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { faSortDown } from '@fortawesome/free-solid-svg-icons';
@@ -8,8 +8,21 @@ const DropDown = ({ DropdownItems }) => {
   const handleClick = () => {
     isShown ? setIsShown(false) : setIsShown(true);
   };
+  const wrapRef = useRef(null);
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (wrapRef.current && !wrapRef.current.contains(event.target)) {
+        setIsShown(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [wrapRef]);
+
   return (
-    <ul style={{ position: 'relative' }}>
+    <ul style={{ position: 'relative' }} ref={wrapRef}>
       <Dropdown>
         <DropDownLink href={DropdownItems[0].uri} onClick={handleClick}>
           {DropdownItems[0].text}

@@ -1,27 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import CourseCard from './shared/CourseCard.jsx';
 import styled from 'styled-components';
 import NothingToShow from './shared/NothingToShow.jsx';
+import LanguageContext from './LanguageContext.jsx';
 
 const Courses = () => {
+  const [lang] = useContext(LanguageContext);
   const courses = [
     {
-      name: 'Americas wars',
-      uri: 'https://example.com',
-      chapter: 'War of Afghanistan',
-      type: 'History',
-      teacher: 'Prof Homer',
+      name: 'Théorie des nombres',
+      uri: 'https://visio.callmykid.com/gustaveeifelle',
+      chapter: 'Nombre irrationnel',
+      type: 'MATH',
+      teacher: 'Prof Youssefie',
     },
   ];
 
   return (
     <Container>
-      <Title>Courses / {courses.length}</Title>
+      <Title>
+        {lang.Courses.title} / {courses.length}
+      </Title>
       <Coursesontainer>
         {courses ? (
           courses.map((item) => <CourseCard course={item} key={item.name} />)
         ) : (
-          <NothingToShow name={'couses'} />
+          <NothingToShow name={lang.Courses.title} />
         )}
       </Coursesontainer>
     </Container>

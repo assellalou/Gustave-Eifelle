@@ -54,6 +54,10 @@ const InputContainer = styled.div`
   align-items: center;
   padding: 100px 50px;
   border-radius: 8px;
+  @media (max-width: 900px) {
+    width: 90%;
+    padding: 50px 20px;
+  }
 `;
 const StyledInput = styled.input`
   padding-left: 25px;
@@ -67,6 +71,9 @@ const StyledInput = styled.input`
   &:focus {
     box-shadow: inset 4px 4px 4px #d1d9e6, inset -4px -4px 4px #f9f9f9;
     outline: none;
+  }
+  @media (max-width: 900px) {
+    width: 100%;
   }
 `;
 const StyledButton = styled.button`

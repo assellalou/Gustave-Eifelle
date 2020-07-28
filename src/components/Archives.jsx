@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import NothingToShow from './shared/NothingToShow.jsx';
 import styled from 'styled-components';
+import LanguageContext from './LanguageContext.jsx';
 const Archives = () => {
   const archives = [];
+  const [lang] = useContext(LanguageContext);
   return (
     <Container>
-      <Title>Archives / {archives.length}</Title>
+      <Title>
+        {lang.Archives.title} / {archives.length}
+      </Title>
       <ArchivesContainer>
         {archives.length ? (
           <h1>Archive card</h1> //change it
         ) : (
-          <NothingToShow name="archives" />
+          <NothingToShow name={lang.Archives.title} />
         )}
       </ArchivesContainer>
     </Container>

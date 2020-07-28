@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import LanguageContext from '../LanguageContext.jsx';
 
 const CourseCard = ({ course }) => {
+  const [lang] = useContext(LanguageContext);
   return (
     <Course>
       <CoursePreview>
@@ -11,7 +13,9 @@ const CourseCard = ({ course }) => {
       </CoursePreview>
       <CourseInfo>
         <CourseH2>{course.chapter}</CourseH2>
-        <CourseLink href={course.uri}>Continue</CourseLink>
+        <CourseLink href={course.uri}>
+          {lang.Courses.CourseCardContinue}
+        </CourseLink>
       </CourseInfo>
     </Course>
   );
@@ -23,7 +27,7 @@ const Course = styled.div`
   display: flex;
   width: 500px;
   max-width: 100%;
-  min-width: 200px;
+  min-width: 100px;
   margin: 20px 10px;
   overflow: hidden;
   @media (max-width: 900px) {
@@ -83,11 +87,13 @@ const CourseLink = styled.a`
   }
   @media (max-width: 900px) {
     bottom: 150px;
-    background: #ce3d3d;
-    box-shadow: 6px 6px 30px #ca2231, -6px -6px 10px #cf4d4d;
-    border-color: #ce3d3d;
-    color: #eee;
     font-size: 14px;
+    background: #ce3d3d;
+    box-shadow: 5px 5px 6px #9f2f2f, -5px -5px 6px #fd4b4b;
+    color: #eee;
+    &:hover {
+      box-shadow: inset 5px 5px 6px #9f2f2f, inset -5px -5px 6px #fd4b4b;
+    }
   }
 `;
 export default CourseCard;

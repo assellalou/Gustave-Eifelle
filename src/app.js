@@ -20,34 +20,35 @@ const App = () => {
   const handleConnect = () => {
     setIsActive(true);
   };
+  const profileData = {
+    img: profilepic,
+    name: 'Mohammed Massoudi',
+    email: 'mohammed@gustave.com',
+  };
   return (
-    <LanguageContext.Provider value={languageHook}>
-      {isActive ? (
-        <div style={{ width: '100%', overflow: 'hidden' }}>
-          <TopNav />
-          <Container>
-            <SideNav
-              profile={{
-                img: profilepic,
-                name: 'Clark Greiffen',
-                email: 'clark@contact.com',
-              }}
-            />
-            <Router style={{ width: '100%' }}>
-              <Courses path="/" />
-              <Login path="/login" />
-              <Courses path="/courses" />
-              <Calendar path="/calendar" />
-              <Profile path="/profile" />
-              <Classes path="/classes" />
-              <Archives path="/archives" />
-            </Router>
-          </Container>
-        </div>
-      ) : (
-        <Login connect={handleConnect} />
-      )}
-    </LanguageContext.Provider>
+    <React.StrictMode>
+      <LanguageContext.Provider value={languageHook}>
+        {isActive ? (
+          <div style={{ width: '100%', overflow: 'hidden' }}>
+            <TopNav />
+            <Container>
+              <SideNav profile={profileData} />
+              <Router style={{ width: '100%' }}>
+                <Courses path="/" />
+                <Login path="/login" />
+                <Courses path="/courses" />
+                <Calendar path="/calendar" />
+                <Profile path="/profile" />
+                <Classes path="/classes" />
+                <Archives path="/archives" />
+              </Router>
+            </Container>
+          </div>
+        ) : (
+          <Login connect={handleConnect} />
+        )}
+      </LanguageContext.Provider>
+    </React.StrictMode>
   );
 };
 
